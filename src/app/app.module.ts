@@ -7,10 +7,10 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {PostsModule} from './posts/posts-module';
-import {CoreModule} from './core/core-module';
+import {CoreModule} from './core/core.module';
 import {PostService} from './posts/post.service';
 import {ProfileService} from './shared/profile/profile.service';
-
+import {ChatModule} from './chat/chat.module';
 
 
 @NgModule({
@@ -19,12 +19,13 @@ import {ProfileService} from './shared/profile/profile.service';
     LoginComponent,
     SignupComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
+    ChatModule,
     PostsModule
   ],
   providers: [PostService, ProfileService],

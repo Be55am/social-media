@@ -1,7 +1,14 @@
 <div class="card">
   <div class="card-body">
-    <div class="h5">@{{user.username}}</div>
-    <div class="h7 text-muted">Fullname : {{user.firstname}} {{user.lastname}}</div>
+    <div class=" d-flex ">
+      <div class="mr-2">
+        <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+      </div>
+      <div>
+        <div class="h5 mb-0">@{{user.username}}</div>
+        <div class="h7 text-muted">{{user.firstname}} {{user.lastname}}</div>
+      </div>
+    </div>
     <div class="h7">{{user.description}}</div>
   </div>
   <ul class="list-group list-group-flush">

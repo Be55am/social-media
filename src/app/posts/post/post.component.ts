@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Post} from '../../models/post';
+import {Post} from '../post';
+import {PostService} from '../post.service';
 
 @Component({
   selector: 'app-post',
@@ -9,10 +10,19 @@ import {Post} from '../../models/post';
 export class PostComponent implements OnInit {
 
   @Input() post: Post;
-  constructor() {
+  private liked: boolean;
+
+  constructor(private postService: PostService) {
   }
 
   ngOnInit() {
+    this.liked = this.postService.isLiked(this.post.id);
+    console.log('post id' + this.post.id + ' ' + this.liked);
+  }
+
+  onLike(postId: number) {
+    this.postService.likePost(postId);
+    this.liked = !this.liked;
   }
 
 }

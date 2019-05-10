@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Post} from '../../models/post';
+import {Post} from '../post';
 import {PostService} from '../post.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class NewPostComponent implements OnInit {
   newPost(content: string) {
     console.log(content);
 
-    this.postService.addPost(new Post('', '', '', new Date(), content));
+    this.postService.addPost(new Post(Math.random() * 100, '', '', '', new Date(), content));
   }
 
 }

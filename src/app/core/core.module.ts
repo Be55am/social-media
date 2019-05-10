@@ -3,6 +3,7 @@ import {HomeComponent} from './home/home.component';
 import {SharedModule} from '../shared/shared.module';
 import {PostsModule} from '../posts/posts-module';
 import {BrowserModule} from '@angular/platform-browser';
+import {ChatModule} from '../chat/chat.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {BrowserModule} from '@angular/platform-browser';
   imports: [
     BrowserModule,
     SharedModule,
-    PostsModule
+    PostsModule,
+    ChatModule
   ]
 })
 export class CoreModule {

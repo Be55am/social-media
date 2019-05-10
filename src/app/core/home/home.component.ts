@@ -1,7 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from '../../models/user';
-import {Post} from '../../models/post';
-import {PostService} from '../../posts/post.service';
 
 @Component({
   selector: 'app-menu',
@@ -11,13 +8,11 @@ import {PostService} from '../../posts/post.service';
 })
 export class HomeComponent implements OnInit {
 
-  posts: Post[];
 
-  constructor(private postService: PostService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.posts = this.postService.getPosts();
   }
 
 }

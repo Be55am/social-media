@@ -1,0 +1,12 @@
+
+
+.card-link{
+  cursor: pointer;
+  color: #007bff;
+}
+.clicked{
+  color: #000085;
+}
+a{
+  font-size: 0.8rem;
+}
