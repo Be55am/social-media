@@ -5,6 +5,7 @@ import {NewPostComponent} from './new-post/new-post.component';
 import {SharedModule} from '../shared/shared.module';
 import {ModalPostComponent} from './post/modal-post/modal-post.component';
 import {PostListComponent} from './post-list/post-list.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {PostListComponent} from './post-list/post-list.component';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    NgbModule,
   ],
   exports: [
     PostListComponent

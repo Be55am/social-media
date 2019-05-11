@@ -12,7 +12,6 @@ import {PostService} from './posts/post.service';
 import {ProfileService} from './shared/profile/profile.service';
 import {ChatModule} from './chat/chat.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
