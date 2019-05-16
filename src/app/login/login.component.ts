@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {ProfileService} from '../shared/profile/profile.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   email: string;
 
-  constructor() {
+  constructor(private loginService: ProfileService, private router: Router) {
   }
 
   ngOnInit() {
@@ -18,6 +20,11 @@ export class LoginComponent implements OnInit {
   public onDoingSomething(event) {
    // this.email = data;
     console.log(event.target.value);
+  }
+
+  login(content) {
+    this.loginService.login(content);
+    this.router.navigate(['/home']);
   }
 
 }

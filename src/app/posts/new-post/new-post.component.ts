@@ -16,10 +16,10 @@ export class NewPostComponent implements OnInit {
   ngOnInit() {
   }
 
-  newPost(content: string) {
+  newPost(content) {
     console.log(content);
 
-    this.postService.addPost(new Post(Math.random() * 100, '', '', '', new Date(), content));
+   this.postService.addPost(new Post(Math.random() * 100, '', '', '', new Date(), content));
   }
 
 }

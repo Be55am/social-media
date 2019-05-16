@@ -10,7 +10,7 @@ import {PostService} from '../post.service';
 export class PostComponent implements OnInit {
 
   @Input() post: Post;
-  private liked: boolean;
+  private liked: boolean ;
 
   constructor(private postService: PostService) {
   }

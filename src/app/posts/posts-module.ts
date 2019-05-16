@@ -20,7 +20,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
   ],
   exports: [
-    PostListComponent
+    PostListComponent,
+    NewPostComponent
   ]
 })
 export class PostsModule {
