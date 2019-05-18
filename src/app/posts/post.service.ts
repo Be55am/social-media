@@ -18,7 +18,7 @@ export class PostService {
   liked: boolean[] = [false, true];
 
   constructor(private profileService: ProfileService) {
-    this.user = profileService.getUser();
+    this.user = profileService.getLoggedUser();
   }
 
   getPosts(): Post[] {

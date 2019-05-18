@@ -21,4 +21,13 @@ export class ProfileService {
   getLoggedUser(): User {
     return this.user;
   }
+
+  logout() {
+    this.user = undefined;
+  }
+
+  isAuthenticated(): boolean {
+    return !(typeof this.user === 'undefined');
+
+  }
 }

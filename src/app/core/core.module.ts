@@ -5,12 +5,14 @@ import {PostsModule} from '../posts/posts-module';
 import {BrowserModule} from '@angular/platform-browser';
 import {ChatModule} from '../chat/chat.module';
 import { UserComponent } from './user/user.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     UserComponent,
+    PageNotFoundComponent,
 
   ],
   exports: [
