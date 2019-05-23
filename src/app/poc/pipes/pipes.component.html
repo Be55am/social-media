@@ -1,3 +1,20 @@
-<p>
-  pipes works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 mx-auto">
+
+      <label>Search</label><input type="text" [(ngModel)]="search">
+      <ul class="list-group">
+        <li
+        class="list-group-item"
+        *ngFor="let server of servers | filter:search"
+        [ngClass]="getStatusClasses(server)">
+
+          <strong>{{server.name | shorten:10}}</strong>
+          | {{server.instanceType | uppercase}}
+          | {{server.started | date:'fullDate'}}
+          <span class="badge badge-light"> {{server.status}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
