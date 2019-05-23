@@ -15,6 +15,7 @@ const routes: Routes = [
   {path: 'user/:username', component: UserComponent},
   {path: 'register', component: SignupComponent},
   {path: 'chat', component: ChatComponent}, // todo need to be removed
+  {path: 'poc', loadChildren: './poc/poc.module#PocModule'}, // this is how to route to an other module
   {path: 'not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: 'not-found'},
 

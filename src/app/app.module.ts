@@ -12,6 +12,8 @@ import {PostService} from './posts/post.service';
 import {ProfileService} from './shared/profile/profile.service';
 import {ChatModule} from './chat/chat.module';
 import {AuthGuardService} from './auth-guard.service';
+import {FormsModule} from '@angular/forms';
+import { FormReactiveApproachComponent } from './poc/form-reactive-approach/form-reactive-approach.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import {AuthGuardService} from './auth-guard.service';
     FooterComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     CoreModule,
