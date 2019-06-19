@@ -32,8 +32,13 @@
   </div>
   <div class="card-body">
     <div class="text-muted h7 mb-2"><i class="fa fa-clock-o"></i>{{post.publicationTime| date}}</div>
-
+    <!--the post content-->
     <p class="card-text">{{post.content}}</p>
+    <!--the post image-->
+    <div >
+      <img *ngFor="let image of getImages()" [src]="image.data" class="img-thumbnail" [alt]="image.id">
+    </div>
+
   </div>
   <div class="card-footer row mx-0">
     <div (click)="onLike(post.id)" class="btn btn-link py-0 pl-0"  [ngClass]="{clicked:liked}">

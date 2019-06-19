@@ -2,6 +2,7 @@ import {Post} from './post';
 import {User} from '../models/user';
 import {ProfileService} from '../shared/profile/profile.service';
 import {Injectable} from '@angular/core';
+import {Image} from '../models/image';
 
 @Injectable()
 export class PostService {
@@ -12,6 +13,13 @@ export class PostService {
       'adipisicing elit. Ipsa, excepturi. Doloremque, reprehenderit! Quos in maiores, soluta doloremque molestiae reiciendis ' +
       'libero expedita assumenda fuga quae. Consectetur id molestias itaque facere? Hic!', 23),
     new Post(2, 'JohnDoe', 'John', 'Doe', new Date('5/3/2019'), 'i love bacon', 66, 'SahLee')
+  ];
+  images = [
+    new Image(1, '../../../assets/images.jpeg'),
+    new Image(1, '../../../assets/img_avatar.png'),
+    new Image(1, '../../../assets/CES-payments-commerce-innovation.jpg'),
+    new Image(1, '../../../assets/internet_opic_lights-100050155-medium.jpg'),
+
   ];
   user: User;
 
@@ -45,6 +53,13 @@ export class PostService {
 
   isLiked(postId): boolean {
     return this.liked[postId - 1];
+  }
+
+  getImages(postId: number): Image[] {
+    if (postId === 1) {
+      return this.images;
+    }
+    return null;
   }
 
 }

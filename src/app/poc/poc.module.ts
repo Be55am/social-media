@@ -6,7 +6,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PipesComponent } from './pipes/pipes.component';
 import {ShortenPipe} from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
-import { HttpDemoComponent } from './http-demo/http-demo.component';
+import { AclComponent } from './acl/acl.component';
 
 @NgModule({
   imports: [
@@ -20,7 +20,7 @@ import { HttpDemoComponent } from './http-demo/http-demo.component';
     PipesComponent,
     ShortenPipe,
     FilterPipe,
-    HttpDemoComponent,
+    AclComponent,
   ],
 
 })
