@@ -13,7 +13,9 @@ import {ProfileService} from './shared/profile/profile.service';
 import {ChatModule} from './chat/chat.module';
 import {AuthGuardService} from './auth-guard.service';
 import {FormsModule} from '@angular/forms';
-import { FormReactiveApproachComponent } from './poc/form-reactive-approach/form-reactive-approach.component';
+import {AclService} from 'ng2-acl';
+import {AclDemoResolver} from './acl-demo-resolver';
+import {AclRedirection} from './acl-redirection';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { FormReactiveApproachComponent } from './poc/form-reactive-approach/form
     ChatModule,
     PostsModule
   ],
-  providers: [PostService, ProfileService, AuthGuardService],
+  providers: [PostService, ProfileService, AuthGuardService, AclService, AclDemoResolver, AclRedirection],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
