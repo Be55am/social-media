@@ -1,0 +1,19 @@
+<div [ngSwitch]="input.controlType" [formGroup]="form" class="form-group">
+  <div *ngSwitchCase="'textbox'">
+    <label>{{input.label}}</label>
+    <input [type]="input.type" [formControlName]="input.key" class="form-control" [placeholder]="input.placeHolder">
+    <div class="form-text " *ngIf="!form.get(input.key).valid && form.get(input.key).touched ">
+      <div *ngFor="let validator of input.validators">
+        <div *ngIf="form.get(input.key).errors.hasOwnProperty(validator.name)">
+          {{validator.message}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="'dropdown'">
+    <label>{{input.label}}</label>
+    <select class="form-control" [formControlName]="input.key">
+      <option *ngFor="let option of input.options" [value]="option.value">{{option.key}}</option>
+    </select>
+  </div>
+</div>

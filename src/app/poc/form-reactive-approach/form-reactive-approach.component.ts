@@ -12,6 +12,7 @@ export class FormReactiveApproachComponent implements OnInit {
   private genders = ['Male', 'Female'];
   signupForm: FormGroup;
   forbiddenUsernames = ['Chris', 'Anna'];
+  elements = ['element1', 'element2', 'element3'];
 
   constructor() {
   }
@@ -20,7 +21,8 @@ export class FormReactiveApproachComponent implements OnInit {
     this.signupForm = new FormGroup({
       'username': new FormControl(null, [Validators.minLength(3), Validators.required, this.forbiddenNames.bind(this)]),
       'email': new FormControl(null, [Validators.required, Validators.email], this.forbiddenEmails),
-      'gender': new FormControl('Male')
+      'gender': new FormControl('Male'),
+      'checkbox': new FormControl(null),
     });
   }
 
@@ -30,6 +32,13 @@ export class FormReactiveApproachComponent implements OnInit {
       return {'nameIsForbidden': true};
     }
     return null;
+  }
+
+  buildCheckBox() {
+    const arr = this.elements.map((element) => {
+      return new FormControl(null);
+    });
+    return new FormControl(arr);
   }
 
   // Async validator
@@ -48,7 +57,7 @@ export class FormReactiveApproachComponent implements OnInit {
   }
 
   onSubmite() {
-    console.log(this.signupForm);
+    console.log(this.signupForm.get('username'));
   }
 
 }

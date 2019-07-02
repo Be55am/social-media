@@ -28,6 +28,17 @@
             {{gender}}
           </label>
         </div>
+        <div class="form-check" *ngFor="let element of elements">
+            <input
+              formControlName="checkbox"
+              class="form-check-input"
+              type="checkbox"
+              [name]="element"
+              [value]="element">
+          <label>
+            {{element}}
+          </label>
+        </div>
         <button class="btn btn-primary" type="submit">Submite</button>
       </form>
     </div>

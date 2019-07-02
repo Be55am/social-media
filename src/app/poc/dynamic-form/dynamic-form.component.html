@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-10 col-lg-8 mx-auto bg-light">
+      <form (ngSubmit)="onSubmit()" [formGroup]="form">
+        <div *ngFor="let question of inputList" class="form-group">
+          <app-question [input]="question" [form]="form"></app-question>
+        </div>
+
+        <div class="form-row">
+          <button type="submit"  class="btn btn-primary">Save</button>
+          <button class="btn btn-secondary" (click)="onReset()">reset</button>
+
+        </div>
+      </form>
+
+      <div *ngIf="payLoad" class="form-row">
+        <strong>Saved the following values</strong><br>{{payLoad}}
+      </div>
+    </div>
+  </div>
+</div>
