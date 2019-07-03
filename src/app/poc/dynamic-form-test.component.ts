@@ -20,7 +20,7 @@ export class DynamicFormTestComponent implements OnInit {
       value: '',
       key: 'question1',
       label: 'label1',
-      validators: [{validator: Validators.required, message: 'this field is required'}],
+      validators: [{name: 'required', validator: Validators.required, message: 'this field is required'}],
       order: 1,
       type: 'email'
     }),
