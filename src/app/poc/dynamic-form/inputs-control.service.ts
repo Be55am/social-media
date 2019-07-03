@@ -5,10 +5,10 @@ export class InputsControlService {
   constructor() {
   }
 
-  toFormGroup(questions: InputBase<any>[]) {
+  toFormGroup(inputList: InputBase<any>[]) {
     const group: any = {};
-    questions.forEach(question => {
-      group[question.key] = new FormControl(question.value || '', question.validators.map(value => value.validator));
+    inputList.forEach(input => {
+      group[input.key] = new FormControl(input.value || '', input.validators.map(value => value.validator));
     });
     return new FormGroup(group);
   }

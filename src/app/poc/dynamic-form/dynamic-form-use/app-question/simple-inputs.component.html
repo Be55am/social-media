@@ -8,6 +8,11 @@
           {{validator.message}}
         </div>
       </div>
+      <div *ngFor="let validator of input.asyncValidator">
+        <div *ngIf="form.get(input.key).errors.hasOwnProperty(validator.name)">
+          {{validator.message}}
+        </div>
+      </div>
     </div>
   </div>
   <div *ngSwitchCase="'dropdown'">

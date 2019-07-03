@@ -1,6 +1,6 @@
 import {InputBase} from '../input-base';
 
-export class DropdownQuestion extends InputBase<string> {
+export class DropdownInput extends InputBase<string> {
   controlType = 'dropdown';
   options: {key: string, value: string}[] = [];
 

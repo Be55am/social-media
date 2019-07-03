@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {InputBase} from './dynamic-form/input-base';
-import {TextboxQuestion} from './dynamic-form/input-types/textbox-question';
-import {DropdownQuestion} from './dynamic-form/input-types/dropdown-question';
+import {TextboxInput} from './dynamic-form/input-types/textbox-input';
+import {DropdownInput} from './dynamic-form/input-types/dropdown-input';
 import {Validators} from '@angular/forms';
 
 @Component({
@@ -16,7 +16,7 @@ export class DynamicFormTestComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.inputList = [new TextboxQuestion({
+    this.inputList = [new TextboxInput({
       value: '',
       key: 'question1',
       label: 'label1',
@@ -24,14 +24,14 @@ export class DynamicFormTestComponent implements OnInit {
       order: 1,
       type: 'email'
     }),
-      new TextboxQuestion({
+      new TextboxInput({
         value: '',
         key: 'question2',
         label: 'label2',
         order: 1,
         type: 'password'
       }),
-      new DropdownQuestion({
+      new DropdownInput({
         label: 'label2',
         value: '1',
         key: 'dropdown1',
