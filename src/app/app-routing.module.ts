@@ -7,6 +7,7 @@ import {ChatComponent} from './chat/chat/chat.component';
 import {UserComponent} from './core/user/user.component';
 import {PageNotFoundComponent} from './core/page-not-found/page-not-found.component';
 import {AuthGuardService} from './auth-guard.service';
+import {ImageUploadComponent} from './shared/image-upload/image-upload.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -14,6 +15,8 @@ const routes: Routes = [
   {path: 'home', canActivate: [AuthGuardService], component: HomeComponent},
   {path: 'user/:username', component: UserComponent},
   {path: 'register', component: SignupComponent},
+  {path: 'add-image', component: ImageUploadComponent},
+
   {path: 'chat', component: ChatComponent}, // todo need to be removed
   {path: 'poc', loadChildren: './poc/poc.module#PocModule'}, // this is how to route to an other module
   {path: 'not-found', component: PageNotFoundComponent},

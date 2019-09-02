@@ -16,6 +16,7 @@ import {FormsModule} from '@angular/forms';
 import {AclService} from 'ng2-acl';
 import {AclDemoResolver} from './acl-demo-resolver';
 import {AclRedirection} from './acl-redirection';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {AclRedirection} from './acl-redirection';
     AppRoutingModule,
     CoreModule,
     ChatModule,
-    PostsModule
+    PostsModule,
+    SharedModule
   ],
   providers: [PostService, ProfileService, AuthGuardService, AclService, AclDemoResolver, AclRedirection],
   bootstrap: [AppComponent]
