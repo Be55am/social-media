@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 mx-auto p-3 bg-light">
+      <form [formGroup]="addCategoryForm" (ngSubmit)="onSubmite()">
+        <div class="form-group">
+          <label for="label">Label</label>
+          <input
+            formControlName="label"
+            type="text"
+            id="label"
+            class="form-control">
+          <div class="form-text " *ngIf="!addCategoryForm.get('label').valid && addCategoryForm.get('label').touched ">
+            You need to add a label
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="parent">Categorie parent</label>
+          <select
+            class="form-control custom-select"
+            formControlName="parent"
+            id="parent">
+            <option value="0" >Open this selected menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea
+            formControlName="description"
+            type="text" id="description"
+            rows="3"
+            class="form-control">
+          </textarea>
+          <div class="form-text "
+               *ngIf="!addCategoryForm.get('description').valid && addCategoryForm.get('description').touched ">
+            You need to add a description !
+          </div>
+        </div>
+
+
+
+        <div class="form-group">
+          <label for="image">Image</label>
+          <div class="">
+            <div class="row">
+              <img  class="img-fluid img-thumbnail mx-auto " [src]="image">
+            </div>
+            <div class="upload-options">
+              <label>
+                <input #imageInput (change)="processFile(imageInput)" id="image" type="file" class="image-upload" accept="image/*" />
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+        <button class="btn btn-primary" [disabled]="addCategoryForm.invalid" type="submit">Submite</button>
+      </form>
+    </div>
+  </div>
+</div>

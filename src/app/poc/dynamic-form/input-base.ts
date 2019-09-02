@@ -12,8 +12,12 @@ export abstract class InputBase<T> {
   value: T;
   key: string;
   label: string;
-  validators: {name: string, validator: ValidatorFn, message: string }[] = [];
-  asyncValidator: {name: string, validator: AsyncValidatorFn, message: string}[] = [];
+  /**
+   * the name of the validator is related to the name given by angular for example email for the email and required for the
+   * required validator etc
+   */
+  validators: { name: string, validator: ValidatorFn, message: string }[] = [];
+  asyncValidator: { name: string, validator: AsyncValidatorFn, message: string }[] = [];
 
   order: number;
   controlType: string;
@@ -22,8 +26,8 @@ export abstract class InputBase<T> {
     value?: T,
     key?: string,
     label?: string,
-    validators?: {name: string, validator: ValidatorFn, message: string }[] ,
-    asyncValidator?: {name: string, validator: AsyncValidatorFn, message: string}[],
+    validators?: { name: string, validator: ValidatorFn, message: string }[],
+    asyncValidator?: { name: string, validator: AsyncValidatorFn, message: string }[],
     order?: number,
     controlType?: string
   } = {}) {

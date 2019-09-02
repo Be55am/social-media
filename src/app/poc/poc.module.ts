@@ -10,6 +10,7 @@ import { AclComponent } from './acl/acl.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { SimpleInputsComponent } from './dynamic-form/dynamic-form-use/app-question/simple-inputs.component';
 import {DynamicFormTestComponent} from './dynamic-form-test.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import {DynamicFormTestComponent} from './dynamic-form-test.component';
     DynamicFormComponent,
     SimpleInputsComponent,
     DynamicFormTestComponent,
+    AddCategoryComponent,
   ],
 
 })
